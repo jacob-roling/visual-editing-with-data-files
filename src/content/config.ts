@@ -48,7 +48,7 @@ const pagesCollection = defineCollection({
 });
 
 const dataCollection = defineCollection({
-  loader: glob({ pattern: "**/*.json", base: "./src/content/data/" }),
+  loader: glob({ pattern: "**/*.json", base: "./src/content/contentData/" }),
   schema: z.object({
     marquee_text: z.string(),
   }),
