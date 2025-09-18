@@ -1,6 +1,8 @@
 ---
 import type { ImageMetadata } from "astro";
 import { getCollection, getEntry } from "astro:content";
+import markdownit from "markdown-it";
+const md = markdownit({ html: true });
 import { Picture } from "astro:assets";
 import Markdown from "../../utility/markdown.astro";
 
@@ -45,7 +47,9 @@ const imageSrc = allImages[image.image_path]?.default ?? image.image_path;
 
 const dataCollection = await getCollection("contentData");
 console.log(dataCollection[0]);
-const dataCollectionText = dataCollection[0].data?.marquee_text;
+const dataCollectionText = md.renderInline(
+  dataCollection[0].data?.marquee_text
+);
 
 const headingGradientColor = heading.heading_gradient_color;
 ---

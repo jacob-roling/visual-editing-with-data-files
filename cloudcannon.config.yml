@@ -155,10 +155,20 @@ data_config:
     path: data/colors.json
   tags:
     path: data/tags.json
-  # contentData:
-  #   path: src/content/contentData/editable-test.json
+
 
 file_config:
+  - glob: src/content/contentData/editable-test.json
+    _inputs:
+      marquee_text:
+        type: markdown
+        options:
+          bold: true
+          italic: true
+          underline: true
+          link: true
+          subscript: true
+          superscript: true
   - glob: data/colors.json
     _structures:
       color:
