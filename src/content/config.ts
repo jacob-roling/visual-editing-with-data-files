@@ -57,5 +57,5 @@ const dataCollection = defineCollection({
 export const collections = {
   blog: blogCollection,
   pages: pagesCollection,
-  data: dataCollection
+  contentData: dataCollection
 };

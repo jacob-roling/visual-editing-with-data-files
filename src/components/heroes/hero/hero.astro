@@ -43,7 +43,7 @@ const allImages = import.meta.glob<{ default: ImageMetadata }>(
 );
 const imageSrc = allImages[image.image_path]?.default ?? image.image_path;
 
-const dataCollection = await getCollection("data");
+const dataCollection = await getCollection("contentData");
 console.log(dataCollection[0]);
 const dataCollectionText = dataCollection[0].data?.marquee_text;
 

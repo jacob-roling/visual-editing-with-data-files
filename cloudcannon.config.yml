@@ -132,6 +132,11 @@ collections_config:
     disable_add_folder: true
     glob: 
       - '!icons.json'
+  content_data:
+    path: src/content/contentData
+    disable_url: true
+    disable_add: true
+    disable_add_folder: true
 
 collection_groups:
   - heading: Pages
@@ -149,6 +154,8 @@ data_config:
     path: data/colors.json
   tags:
     path: data/tags.json
+  # contentData:
+  #   path: src/content/contentData/editable-test.json
 
 file_config:
   - glob: data/colors.json
