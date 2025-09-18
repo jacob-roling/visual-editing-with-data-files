@@ -1,4 +1,4 @@
-timezone: Pacific/Auckland
+timezone: Australia/Adelaide
 
 paths:
   static: public
