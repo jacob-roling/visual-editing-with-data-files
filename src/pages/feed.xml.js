@@ -4,11 +4,14 @@ import rss from '@astrojs/rss';
 
 const posts = await getCollection('blog');
 
-export async function GET() {
+/**
+ * @type {import("astro").APIRoute}
+ */
+export async function GET(context) {
   return rss({
     title: site.site_title,
     description: site.description,
-    site: Astro.site,
+    site: context.site,
     items: posts.map((post) => ({
       link: `/blog/${post.slug}`,
       title: post.data.title,
