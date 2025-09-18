@@ -146,6 +146,7 @@ collection_groups:
   - heading: Data
     collections:
       - data
+      - content_data
 
 data_config:
   icons:
