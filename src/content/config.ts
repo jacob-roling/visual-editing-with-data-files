@@ -1,4 +1,5 @@
 import { defineCollection, z } from "astro:content";
+import { glob, file } from 'astro/loaders';
 
 const seoSchema = z
   .object({
@@ -46,7 +47,15 @@ const pagesCollection = defineCollection({
   schema: z.union([paginatedCollectionSchema, pageSchema]),
 });
 
+const dataCollection = defineCollection({
+  loader: glob({ pattern: "**/*.json", base: "./src/content/data/" }),
+  schema: z.object({
+    marquee_text: z.string(),
+  }),
+});
+
 export const collections = {
   blog: blogCollection,
   pages: pagesCollection,
+  data: dataCollection
 };
